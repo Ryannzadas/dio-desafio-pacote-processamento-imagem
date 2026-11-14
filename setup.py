@@ -1,20 +1,20 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-with open("README.md", "r") as f:
+with open("README.md", "r", encoding="utf-8") as f:
     page_description = f.read()
 
-with open("requirements.txt") as f:
-    requirements = f.read().splitlines()
+with open("requirements.txt", encoding="utf-8") as f:
+    requirements = [linha.strip() for linha in f if linha.strip() and not linha.startswith("#")]
 
 setup(
-    name="dio-desafio-pacote-processamento-imagem",
-    version="0.0.10",
-    author="Charles",
-    description="Processamento imagem usando Skimage",
+    name="processamento-imagem-ryannzadas",
+    version="0.1.0",
+    author="João Ryan",
+    description="Pacote de processamento de imagens com scikit-image (desafio DIO)",
     long_description=page_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/charlesfsouza/dio-desafio-pacote-processamento-imagem",
-    packages=find_packages(),
+    url="https://github.com/Ryannzadas/dio-desafio-pacote-processamento-imagem",
+    packages=find_packages(exclude=["tests"]),
     install_requires=requirements,
-    python_requires='>=3.5'
+    python_requires=">=3.9",
 )

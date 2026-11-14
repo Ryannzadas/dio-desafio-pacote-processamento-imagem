@@ -136,3 +136,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+# Saídas do exemplo.py (só a prancha vai para o repositório)
+exemplos/*.png
+!exemplos/prancha.png
